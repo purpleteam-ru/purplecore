@@ -1,0 +1,16 @@
+- id: SQLi_001
+  name: "SQL Injection"
+  pattern: '(?i)(SELECT|INSERT|UPDATE|DELETE).*?(\$\w+|request\.getParameter)'
+  # Исправлено: Убраны проблемы с экранированием
+
+- id: XSS_001
+  name: "XSS"
+  pattern: '(echo|innerHTML|document\.write).*?(\$_GET|\$_POST|location\.hash)'
+
+- id: CMDi_001
+  name: "Command Injection"
+  pattern: '(system|exec|popen|subprocess\.run).*?(\$_GET|\$_POST|argv)'
+
+- id: UNSAFE_SERIAL_001
+  name: "Unsafe Deserialization"
+  pattern: '(json\.loads\(|pickle\.load|ObjectInputStream)'
