@@ -55,3 +55,8 @@ rules:
         Код: FileUtils.readFile(request.getParameter("file"))
 
         Уровень риска: 🟡 Низкий (0.65)
+
+
+### Обучение модели на сгенерированном датасете
+
+docker run --gpus all -v /data:/data purplecore-trainer
