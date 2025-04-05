@@ -1,33 +1,33 @@
-# purplecore
-Программа для автоматического поиска уязвимостей в исходном коде (PHP, Java, Python, JS) с использованием AI и пользовательских правил
+# PurpleCore
+An advanced static application security testing (SAST) tool for automated vulnerability detection in source code (PHP, Java, Python, JavaScript) utilizing AI and customizable rule sets.
 
-## Особенности
-- 🛡️ Поиск 50+ типов уязвимостей (SQLi, XSS, RCE и др.)
-- 🤖 Интеграция с моделями DeepSeek и CodeBERT
-- 📂 Рекурсивное сканирование директорий
-- 📊 Генерация обучающего датасета
-- 🎚️ Интерактивный режим проверки
+## Key Features
+- 🛡️ Detection of 50+ vulnerability types (SQLi, XSS, RCE, etc.)
+- 🤖 Integrated DeepSeek and CodeBERT AI models
+- 📂 Recursive directory scanning capability
+- 📊 Training dataset generation functionality
+- 🎚️ Interactive code review mode
 
-## Установка
+## Installation
 ```bash
 pip install transformers torch pyyaml
-git clone [https://github.com/purpleteam-ru/purplecore]
+git clone https://github.com/purpleteam-ru/purplecore
 cd purplecore
 ```
-### Использование 
 
-Сканирование проекта
-
+Usage
+Project Scanning
+```bash
 python analyzer.py /path/to/project
+```
 
-Интерактивная проверка
-
+Interactive Review
+```bash
 python analyzer.py --review
+```
+Configuration
 
-### Конфигурация
-
-Создайте scanner_config.yaml:
-
+Create scanner_config.yaml:
 ```yaml
 exclude_dirs: ['.git', 'node_modules']
 model: deepseek-ai/DeepSeek-R1
@@ -36,27 +36,31 @@ rules:
   - custom_rules.yaml
 ```
 
-### Примерные результаты
+Sample Findings
+```bash
 
-    SQL Injection:
+SQL Injection:
 
-        Код: stmt.execute("SELECT * FROM users WHERE id = " + request.getParameter("id"))
+    Code: stmt.execute("SELECT * FROM users WHERE id = " + request.getParameter("id"))
 
-        Уровень риска: 🔴 Высокий (0.95)
+    Risk Level: 🔴 High (0.95)
 
-    Log Forging:
+Log Forging:
 
-        Код: logger.info("User action: " + userInput)
+    Code: logger.info("User action: " + userInput)
 
-        Уровень риска: 🟠 Средний (0.75)
+    Risk Level: 🟠 Medium (0.75)
 
-    Path Traversal:
+Path Traversal:
 
-        Код: FileUtils.readFile(request.getParameter("file"))
+    Code: FileUtils.readFile(request.getParameter("file"))
 
-        Уровень риска: 🟡 Низкий (0.65)
+    Risk Level: 🟡 Low (0.65)
+```
 
+Model Training
 
-### Обучение модели на сгенерированном датасете
-
+To train the model using generated datasets:
+```bash
 docker run --gpus all -v /data:/data purplecore-trainer
+```
