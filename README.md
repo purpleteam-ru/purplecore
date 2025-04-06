@@ -2,11 +2,11 @@
 An advanced static application security testing (SAST) tool for automated vulnerability detection in source code (PHP, Java, Python, JavaScript) utilizing AI and customizable rule sets.
 
 ## Key Features
-- 🛡️ Detection of 50+ vulnerability types (SQLi, XSS, RCE, etc.)
-- 🤖 Integrated DeepSeek and CodeBERT AI models
-- 📂 Recursive directory scanning capability
-- 📊 Training dataset generation functionality
-- 🎚️ Interactive code review mode
+- Detection of 50+ vulnerability types (SQLi, XSS, RCE, etc.)
+- Integrated DeepSeek and CodeBERT AI models
+- Recursive directory scanning capability
+- Training dataset generation functionality
+- Interactive code review mode
 
 ## Installation
 ```bash
