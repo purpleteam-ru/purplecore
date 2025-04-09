@@ -3,10 +3,9 @@ An advanced static application security testing (SAST) tool for automated vulner
 
 ## Key Features
 - Detection of 50+ vulnerability types (SQLi, XSS, RCE, etc.)
-- Integrated DeepSeek and CodeBERT AI models
-- Recursive directory scanning capability
-- Training dataset generation functionality
-- Interactive code review mode
+- Integrated DeepSeek and GraphCodeBERT AI models
+- Training dataset generation
+- Interactive code review
 
 ## Installation
 ```bash
@@ -40,22 +39,14 @@ Sample Findings
 ```bash
 
 SQL Injection:
-
     Code: stmt.execute("SELECT * FROM users WHERE id = " + request.getParameter("id"))
 
-    Risk Level: 🔴 High (0.95)
-
 Log Forging:
-
     Code: logger.info("User action: " + userInput)
 
-    Risk Level: 🟠 Medium (0.75)
-
 Path Traversal:
-
     Code: FileUtils.readFile(request.getParameter("file"))
 
-    Risk Level: 🟡 Low (0.65)
 ```
 
 Model Training
