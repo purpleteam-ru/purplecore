@@ -1,7 +1,6 @@
 - id: SQLi_001
   name: "SQL Injection"
   pattern: '(?i)(SELECT|INSERT|UPDATE|DELETE).*?(\$\w+|request\.getParameter)'
-  # Исправлено: Убраны проблемы с экранированием
 
 - id: XSS_001
   name: "XSS"
